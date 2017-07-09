@@ -1,5 +1,7 @@
 # Weechat Windows Notification
 
+![Emoji](print.png)
+
 ## Requirements
 * Windows 10
 * Powershell 5 or higher
