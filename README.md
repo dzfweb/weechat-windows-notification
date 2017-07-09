@@ -17,14 +17,21 @@ Execute the command after the BurntToast installation
 `New-BTAppId`
 
 ### 2- Register PowerShell Script
-- `git clone https://github.com/dzfweb/weechat-windows-notification`
-- `cd weechat-windows-notification`
+```
+git clone https://github.com/dzfweb/weechat-windows-notification
+cd weechat-windows-notification
+``` 
 
 Edit the file WeeChatWindowsNotification.ps1 and replace the folder configuration. 
 *Important: use a folder accessible both powershell and bash* 
-- `$folder = 'C:\Users\dougl\.weechat'`
+```
+$folder = 'C:\Users\dougl\.weechat'
+```
 
-Register the powershell script by running the following command on powershell `WeeChatWindowsNotification.ps1`
+Register the powershell script by running the following command on powershell 
+```
+WeeChatWindowsNotification.ps1
+```
 
 ### 3- Get WeeChat Plugin (windows bash)
 Get the plugin script
@@ -33,6 +40,20 @@ wget https://raw.githubusercontent.com/dzfweb/weechat-windows-notification/maste
 cp windows_notification.py ~/.weechat/python/autoload
 ``` 
 Start WeeChat and configure the path.
-`/set plugins.var.python.windows_notification.path /mnt/c/Users/dougl/.weechat`
+
+```/set plugins.var.python.windows_notification.path /mnt/c/Users/dougl/.weechat```
 
 *Obs: you can set any folder, it is used to share temp files between powershell and bash only*
+
+### Variables
+Send notification for every highlight
+```/set plugins.var.python.windows_notification.highlight on```
+*default is on*
+
+Send notification for every query
+```/set plugins.var.python.windows_notification.query on```
+*default is on*
+
+Send notification even if is away
+```/set plugins.var.python.windows_notification.notify_away on```
+*default is of*
