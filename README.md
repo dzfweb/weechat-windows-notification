@@ -33,10 +33,10 @@ Register the powershell script by running the following command on powershell
 WeeChatWindowsNotification.ps1
 ```
 
-Create a shortcut to this powershell script at the following dir. It is necessary to execute the script automatically when windows loaded.
+Create a shortcut to this powershell script as the following on windows startup folder. It is necessary to execute the script automatically when windows loaded.
 
 ```
-C:\Windows\System32\GroupPolicy\Machine\Scripts\Startup
+%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe -windowstyle hidden -File C:\path\from\the\script\WeeChatWindowsNotification.ps1
 ```
 
 ### 3- Get WeeChat Windows Notification Plugin (windows bash)
