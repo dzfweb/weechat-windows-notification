@@ -46,20 +46,19 @@ Start WeeChat and configure the path.
 *Obs: you can set any folder, it is used to share temp files between powershell and bash only*
 
 ### Variables
-Send notification for every highlight
+Send notification for every highlight (default is on)
 ```
 /set plugins.var.python.windows_notification.highlight on
 ```
-*default is on*
 
-Send notification for every query
+
+Send notification for every query (default is on)
 ```
 /set plugins.var.python.windows_notification.query on
 ```
-*default is on*
 
-Send notification even if is away
+
+Send notification even if is away (default is off)
 ```
 /set plugins.var.python.windows_notification.notify_away on
 ```
-*default is of*
