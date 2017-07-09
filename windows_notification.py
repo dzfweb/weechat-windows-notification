@@ -87,8 +87,8 @@ def handle_msg(data, pbuffer, date, tags, displayed, highlight, prefix, message)
 
     if buffer_type == "private" and query:
         notify_user(buffer_name, message)
-    elif buffer_type == "channel" and highlight:
-        notify_user("{} @ {}".format(prefix, buffer_name), message)
+    elif buffer_type == "channel":
+        notify_user('{} @ {}'.format(buffer_name, tags.split(',')[0].replace('nick_','')), message)
 
     return weechat.WEECHAT_RC_OK
 
