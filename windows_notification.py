@@ -74,9 +74,14 @@ def handle_msg(data, pbuffer, date, tags, displayed, highlight, prefix, message)
     if away and not notify_away:
         return weechat.WEECHAT_RC_OK
 
-    # don't work in wee slack
-    # if my_nickname in tags:
-    #     return weechat.WEECHAT_RC_OK
+    if my_nickname in tags and my_nickname != 'nick_':
+        return weechat.WEECHAT_RC_OK
+
+    if 'nick_unknown' in tags:
+        return weechat.WEECHAT_RC_OK
+
+    if 'no_highlight' in tags:
+        return weechat.WEECHAT_RC_OK
 
     buffer_name = weechat.buffer_get_string(pbuffer, "short_name")
 
