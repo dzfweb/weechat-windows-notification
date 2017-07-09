@@ -47,13 +47,19 @@ Start WeeChat and configure the path.
 
 ### Variables
 Send notification for every highlight
-```/set plugins.var.python.windows_notification.highlight on```
+```
+/set plugins.var.python.windows_notification.highlight on
+```
 *default is on*
 
 Send notification for every query
-```/set plugins.var.python.windows_notification.query on```
+```
+/set plugins.var.python.windows_notification.query on
+```
 *default is on*
 
 Send notification even if is away
-```/set plugins.var.python.windows_notification.notify_away on```
+```
+/set plugins.var.python.windows_notification.notify_away on
+```
 *default is of*
