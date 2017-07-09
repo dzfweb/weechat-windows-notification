@@ -33,7 +33,7 @@ Register the powershell script by running the following command on powershell
 WeeChatWindowsNotification.ps1
 ```
 
-### 3- Get WeeChat Plugin (windows bash)
+### 3- Get WeeChat Windows Notification Plugin (windows bash)
 Get the plugin script
 ```
 wget https://raw.githubusercontent.com/dzfweb/weechat-windows-notification/master/windows_notification.py
@@ -61,4 +61,14 @@ Send notification for every query (default is on)
 Send notification even if is away (default is off)
 ```
 /set plugins.var.python.windows_notification.notify_away on
+```
+
+
+### Reload PowerShell Script
+Run the following command at the script plugin folders
+
+```
+Unregister-Event WeeChatWindowsNotification
+WeeChatWindowsNotification.ps1
+
 ```
