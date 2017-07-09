@@ -9,9 +9,11 @@
 
 ## Instalation 
 ### 1- Install BurntToast
+
 `Install-Module -Name BurntToast`
 
 Execute the command after the BurntToast installation
+
 `New-BTAppId`
 
 ### 2- Register PowerShell Script
