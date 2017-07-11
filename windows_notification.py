@@ -28,7 +28,9 @@ class config(object):
             "highlight": "on",
             "query": "on",
             "notify_away": "off",
-			"path": "/mnt/c/Users/dougl/.weechat"
+			"path": "/mnt/c/Users/dougl/.weechat",
+            "ignore_nicks": "",
+            "ignore_teams": "ticketLog"
         }
 
         self.init_config()
@@ -59,6 +61,8 @@ def handle_msg(data, pbuffer, date, tags, displayed, highlight, prefix, message)
     x_focus = False
     window_name = ""
     my_nickname = "nick_" + weechat.buffer_get_string(pbuffer, "localvar_nick")
+    team = weechat.buffer_get_string(pbuffer, "name")
+    ignore_nicks = cfg["ignore_nicks"].split(",")
 
     # Check to make sure we're in X and xdotool exists.
     # This is kinda crude, but I'm no X master.
@@ -69,6 +73,13 @@ def handle_msg(data, pbuffer, date, tags, displayed, highlight, prefix, message)
         x_focus = True
 
     if pbuffer == weechat.current_buffer() and x_focus:
+        return weechat.WEECHAT_RC_OK
+
+    for ignore_team in cfg["ignore_teams"].split(","):
+        if ignore_team.lower() in team.lower():
+            return weechat.WEECHAT_RC_OK
+
+    if team in cfg["ignore_teams"].split(","):
         return weechat.WEECHAT_RC_OK
 
     if away and not notify_away:
