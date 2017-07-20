@@ -112,7 +112,7 @@ def process_cb(data, command, return_code, out, err):
     return weechat.WEECHAT_RC_OK
 
 def notify_user(origin, message):
-    file = "{}/{}.notify".format(cfg['path'], origin[1:]);
+    file = "{}/{}.notify".format(cfg['path'], origin[1:].replace("|","_"));
     with io.FileIO(file, "w") as file:
         file.write(message)
         file.close()
