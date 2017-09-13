@@ -78,3 +78,9 @@ Unregister-Event WeeChatWindowsNotification
 WeeChatWindowsNotification.ps1
 
 ```
+
+# Obs
+You need to had set your default nickname for weechat: 
+```
+/set irc.server.freenode.nicks "mynick"
+```
